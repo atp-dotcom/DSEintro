@@ -1,0 +1,67 @@
+{
+  "chart": {
+    "title": "Annual change in GDP, population and CO₂ emissions",
+    "subtitle": "Percentage change in gross domestic product (GDP), population, and carbon dioxide (CO₂) emissions.",
+    "note": "GDP figures are adjusted for inflation.",
+    "citation": "United Nations Population Division, Eurostat, national statistical offices, and United Nations Statistics Division, via World Bank (2025); World Bank and OECD national accounts (2025); Global Carbon Budget (2024)",
+    "originalChartUrl": "https://ourworldindata.org/grapher/co2-gdp-pop-growth?v=1&csvType=full&useColumnShortNames=false",
+    "selection": [
+      "World"
+    ]
+  },
+  "columns": {
+    "Population growth (annual %)": {
+      "titleShort": "Population",
+      "titleLong": "Population",
+      "shortUnit": "%",
+      "unit": "annual %",
+      "timespan": "1961-2023",
+      "type": "Numeric",
+      "owidVariableId": 1008996,
+      "shortName": "sp_pop_grow",
+      "lastUpdated": "2025-01-24",
+      "nextUpdate": "2026-01-24",
+      "citationShort": "United Nations Population Division, Eurostat, national statistical offices, and United Nations Statistics Division, via World Bank (2025) – processed by Our World in Data",
+      "citationLong": "United Nations Population Division, Eurostat, national statistical offices, and United Nations Statistics Division, via World Bank (2025) – processed by Our World in Data. “Population” [dataset]. United Nations Population Division, Eurostat, national statistical offices, and United Nations Statistics Division, via World Bank, “World Development Indicators” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1008996.metadata.json"
+    },
+    "GDP growth (annual %)": {
+      "titleShort": "GDP",
+      "titleLong": "GDP",
+      "shortUnit": "%",
+      "unit": "annual %",
+      "timespan": "1961-2023",
+      "type": "Numeric",
+      "owidVariableId": 1008359,
+      "shortName": "ny_gdp_mktp_kd_zg",
+      "lastUpdated": "2025-01-24",
+      "nextUpdate": "2026-01-24",
+      "citationShort": "World Bank and OECD national accounts (2025) – processed by Our World in Data",
+      "citationLong": "World Bank and OECD national accounts (2025) – processed by Our World in Data. “GDP” [dataset]. World Bank and OECD national accounts, “World Development Indicators” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/1008359.metadata.json"
+    },
+    "Annual CO₂ emissions growth (%)": {
+      "titleShort": "CO₂ emissions",
+      "titleLong": "CO₂ emissions",
+      "descriptionShort": "Annual percentage growth in total emissions of carbon dioxide (CO₂), excluding land-use change.",
+      "descriptionKey": [
+        "This data is based on territorial emissions, meaning the emissions produced within a country's borders, but not those from imported goods. For example, emissions from imported steel are counted in the country where the steel is produced. To learn more and look at emissions adjusted for trade, read our article: [How do CO₂ emissions compare when we adjust for trade?](https://ourworldindata.org/consumption-based-co2)",
+        "Emissions from international aviation and shipping are not included in the data for any individual country or region. They are only counted in the global total."
+      ],
+      "descriptionProcessing": "- Global emissions are converted from tonnes of carbon to tonnes of carbon dioxide (CO₂) using a factor of 3.664. This is the conversion factor [recommended by the Global Carbon Project](https://globalcarbonbudgetdata.org/downloads/jGJH0-data/Global+Carbon+Budget+v2024+Dataset+Descriptions.pdf). It reflects that one tonne of carbon, when fully oxidized, forms 3.664 tonnes of CO₂, based on the relative molecular weights of carbon and oxygen in CO₂.\n- Emissions from the 1991 Kuwaiti oil fires are included in Kuwait's emissions for that year.\n",
+      "shortUnit": "%",
+      "unit": "%",
+      "timespan": "1751-2023",
+      "type": "Numeric",
+      "owidVariableId": 998410,
+      "shortName": "pct_growth_emissions_total",
+      "lastUpdated": "2024-11-21",
+      "nextUpdate": "2025-11-21",
+      "citationShort": "Global Carbon Budget (2024) – with major processing by Our World in Data",
+      "citationLong": "Global Carbon Budget (2024) – with major processing by Our World in Data. “CO₂ emissions” [dataset]. Global Carbon Project, “Global Carbon Budget” [original data].",
+      "fullMetadata": "https://api.ourworldindata.org/v1/indicators/998410.metadata.json"
+    }
+  },
+  "dateDownloaded": "2025-09-09",
+  "activeFilters": {}
+}
