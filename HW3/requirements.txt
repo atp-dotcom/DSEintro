@@ -1,5 +1,5 @@
 pandas
-numpu
+numpy
 plotly
 matplotlib.pyplot
 seaborn
