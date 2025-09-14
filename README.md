@@ -16,3 +16,6 @@ This folder contains the assigment files for the Virtual Index Card.
 - Data Management
 - Digital Forensics. 
 
+### HW3
+
+This folder contains the assignment files for Homework 3.

@@ -5,7 +5,9 @@
 
 #  Annual Change in GDP, Population, and CO₂ Emissions  
 
-This repository contains data on **annual changes in GDP, population, and CO₂ emissions** for various countries.  
+This repository contains data on **annual changes in GDP, population, and CO₂ emissions** for various countries. 
+
+###
 
 ---
 
@@ -15,18 +17,24 @@ This repository contains data on **annual changes in GDP, population, and CO₂ 
   - Source: United Nations Population Division, Eurostat, national statistical offices, and United Nations Statistics Division, via World Bank (2025)  
   - Date accessed: September 5, 2025
   - Description: This dataset contains the world population growth (annual %) from 1961 to 2024.
-  - Size: [159 KB, 10595 rows]
+  - Size: [159 KB, 27646 rows]
   - License: CC BY-4.0  
   - URL: [https://data.worldbank.org/indicator/SP.POP.GROW](https://data.worldbank.org/indicator/SP.POP.GROW)  
 
 - **GDP**  
   - Source: World Bank and OECD national accounts (2025)  
-  - Date accessed: September 5, 2025  
+  - Date accessed: September 5, 2025
+  - Description: This dataset contains the world GDP growth (annual %) from 1961 to 2024.
+  - Size: [298 KB, 271 rows, and 70 columns]
+  - License: CC BY-4.0    
   - URL: [https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG)  
 
 - **CO₂ Emissions**  
   - Source: Global Carbon Project – Global Carbon Budget (2024)  
-  - Date accessed: September 5, 2025 
+  - Date accessed: September 5, 2025
+  - Description: This dataset contains the world CO₂ Emission (annual %) from 1961 to 2024.
+  - Size: [159 KB, 10595 rows]
+  - License: CC BY-4.0   
   - URL: [https://globalcarbonbudget.org/](https://globalcarbonbudget.org/)  
 
 ---
@@ -41,14 +49,17 @@ This repository contains data on **annual changes in GDP, population, and CO₂ 
   - Handled missing values by dropping rows with NaN values in key columns.
 
 ## Exploratory Data Analysis (EDA)
+
 The analysis includes both descriptive statistics and data visualizations to explore trends and relationships.
 
 ### Descriptive Statistics
+
 - Compared the **mean and median growth rates** for both GDP and CO₂ emissions to identify potential data skew.  
 - Calculated the **top 5 countries with the highest average annual CO₂ emissions growth**.  
 - Analyzed the **correlation between GDP growth and CO₂ emissions growth**, split into two time periods (pre- and post-2000) to check for changing relationships over time.
 
 ### Visualizations
+
 - Created a **bar chart** to visualize and compare the top 5 countries by average CO₂ emissions growth.  
 - Plotted a **time-series line plot** to show the global average trends of GDP and CO₂ emissions growth over time.  
 - Added **annotations** to highlight the 2008 Financial Crisis and its impact on the data.  
@@ -63,10 +74,13 @@ The analysis includes both descriptive statistics and data visualizations to exp
 
 This project was a collaborative effort between both the partners. We both worked on both the parts and understanding each task.
 
-- **Branches**: Each partner worked on a separate branch, `Gagan_DA` and `HW3`, to manage their code contributions.  
+- **Branches**: Each partner worked on a separate branch, `Gagan_DA` and `main`, to manage their code contributions.  
 - **Merge Conflict Resolution**: A merge conflict was intentionally created and successfully resolved by both partners, demonstrating a key aspect of the Git collaboration workflow. 
 
+--- 
+
 ## Merge Conflict
+
 The git pull command resulted in a merge conflict because changes were made to the same file (Homework3_Analysis.ipynb) in both the local and remote repositories. The conflict was resolved by Manually editing the conflicted file to integrate the changes from both partners, and using git add to stage the resolved file. Also, committing the merged changes.
 
 This process successfully integrated the work from both team members, preserving all contributions.
