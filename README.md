@@ -19,3 +19,16 @@ This folder contains the assigment files for the Virtual Index Card.
 ### HW3
 
 This folder contains the assignment files for Homework 3.
+
+
+### Refactoring and Documenting Code
+
+This folder contains the assignment files for Homework 4 - Refactoring and Documenting Code.
+
+### Scraping and API Data Acquisition with Ethics in Mind
+
+This folder contains the assignment files for Homework 5 - Scraping and API Data Acquisition with Ethics in Mind.
+
+### Fairness in AI
+
+This folder contains the assignment files for Homework 6 - Fairness in AI. 
