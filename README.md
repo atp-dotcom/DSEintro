@@ -31,4 +31,4 @@ This folder contains the assignment files for Homework 5 - Scraping and API Data
 
 ### Fairness in AI
 
-This folder contains the assignment files for Homework 6 - Fairness in AI. 
+This folder contains the assignment files for the assignment Fairness in AI. 
