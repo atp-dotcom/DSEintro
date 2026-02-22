@@ -8,7 +8,7 @@ From: ubuntu:22.04
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
-    cat > /usr/local/bin/container_smoke.sh << 'SCRIPT'
+    cat > /usr/local/bin/runoff_container.sh << 'SCRIPT'
     #!/usr/bin/env bash
 
 set -euo pipefail
