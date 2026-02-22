@@ -1,0 +1,29 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%post 
+    apt-get update && apt-get install -y \
+    python3 python3-pip \
+    && pip3 install pandas numpy glob datetime sys socket os \ 
+    && apt-get clean
+
+    cat > /DSE512/assignment1.sh << 'SCRIPT'
+
+set -euo pipefail
+
+echo "hostname=$(hostname)"
+echo "timestamp=$(date -Iseconds)"
+echo "SLURM_JOB_ID=${SLURM_JOB_ID:-not-set}"
+echo "course_container_tag=${course_container_tag:-unset}"
+echo "numpy_version=$(numpu --version)"
+echo "pandas_version=$(pandas --version)"
+
+SCRIPT
+
+    chmod +x /usr/local/bin/container_smoke.sh
+
+%environment
+    export course_container_tag="assignment1"
+
+%runscript
+    exec /usr/local/bin/container_smoke.sh "$@"
