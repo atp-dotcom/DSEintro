@@ -2,5 +2,5 @@
 
 ## Content
 
-- `assignment 1` contains the files for assignment 1
+- `DSE512/assignment1/` contains the files for assignment 1
 
