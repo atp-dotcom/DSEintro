@@ -21,17 +21,25 @@ To run script run `sbatch runoff.sh`
 
 **Workflow reasoning**
 
-- The workflow is structured as a Directed Acyclic Graph (DAG) to enforce clear stage separation and dependencies. Validation must complete successfully before simulation begins to ensure correct sequence and preventing wasted compute resources.
+- The workflow was decomposed into four logically independent stages:
 
-The simulation stage is implemented as a SLURM job array, where each task independently computes runoff for a single daily rainfall–infiltration record. Each task represents an independent array, allowing parallel scalability. 
+1. Validation – verifies that the dataset contains the required columns and correct structure before any computation begins.
 
-Aggregation operates only on successful outputs. The classification stage transforms numerical ensemble results into decision-relevant risk categories (Low/Medium/High), making the workflow suitable for operational risk screening.
+2. Simulation (Job Array Stage) – each SLURM array task processes a single row of the dataset and computes runoff independently.
 
-The separation of stages (validate, simulate, aggregate, classify) ensure reproducibility, and debuggability. Each stage can be re-run independently without recomputing previous steps.
+3. Aggregation – collects successful simulation outputs and computes the ensemble mean runoff.
+
+4. Classification – assigns a flood risk category based on the computed mean runoff.
+
+The key decomposition decision was at the simulation stage. Instead of looping over all rows in a single process, the dataset was partitioned by row index and distributed across SLURM array tasks using task_id. Each task reads one rainfall–infiltration record, Computes runoff, and write an independent output file. This mirrors an ensemble where each realization is independent. The decomposition therefore enables parallel scalability, failure isolation, and efficient cluster usage.
+
+This is a DAG because there are no closed loop cycles instead each stage depends on output from previous stage and execution is in only 1 direction i.e. validation must succeed before simulation starts and simulations must complete before heading to aggregation. 
 
 **Failure**
 
 - To demonstrate failure, one infiltration value was deliberately set to a negative number. Since infiltration coefficients must lie in the range [0,1], the simulation stage includes a validation flag: if infil < 0 or infil > 1: raise ValueError(...). The corresponding SLURM array task fails with an explicit error message, while all other array tasks complete successfully. 
+
+Introduccing failure means we are preventing wasted cluster time and avoid propagating invalid results into later stages. In large ensembles, some tasks may fail due to corrupted input, parameter violations, or runtime instability. Job arrays isolate failure to individual tasks rather than collapsing the entire workflow.
 
 **Containers**
 
