@@ -7,8 +7,9 @@ This repository contains all the files for assignment 1
 - `data/` contains the dataset 
 - `logs/` contains the error and output files of the successful job
 - `runoff.sh` is the bash script that is submitted
+- `postprocess.sh` is the script that runs the post processing steps including Aggregation and Classification
 - `assignment1_container.def` is the apptainer container
-- `assignment1_container.sif` not included, is the containe image file (see Usage section)
+- `assignment1_container.sif` not included, is the container image file (see Usage section)
 
 ### Usage
 
@@ -20,11 +21,17 @@ To run script run `sbatch runoff.sh`
 
 **Workflow reasoning**
 
-- Answer goes here
+- The workflow is structured as a Directed Acyclic Graph (DAG) to enforce clear stage separation and dependencies. Validation must complete successfully before simulation begins to ensure correct sequence and preventing wasted compute resources.
+
+The simulation stage is implemented as a SLURM job array, where each task independently computes runoff for a single daily rainfall–infiltration record. Each task represents an independent array, allowing parallel scalability. 
+
+Aggregation operates only on successful outputs. The classification stage transforms numerical ensemble results into decision-relevant risk categories (Low/Medium/High), making the workflow suitable for operational risk screening.
+
+The separation of stages (validate, simulate, aggregate, classify) ensure reproducibility, and debuggability. Each stage can be re-run independently without recomputing previous steps.
 
 **Failure**
 
-- Answer goes here
+- To demonstrate failure, one infiltration value was deliberately set to a negative number. Since infiltration coefficients must lie in the range [0,1], the simulation stage includes a validation flag: if infil < 0 or infil > 1: raise ValueError(...). The corresponding SLURM array task fails with an explicit error message, while all other array tasks complete successfully. 
 
 **Containers**
 
