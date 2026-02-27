@@ -1,0 +1,8 @@
+Host check: clr1244
+Submitting container run at 2026-02-26T14:47:15-05:00
+Task ID: 1
+Using container: /nfs/home/atorresp/DSE512/DSEintro/DSE512/assignment1_container.sif
+Using data directory: /nfs/home/atorresp/DSE512/DSEintro/DSE512/data
+-rwxr-xr-x 1 atorresp tug2106 221646848 Feb 26 14:23 /nfs/home/atorresp/DSE512/DSEintro/DSE512/assignment1_container.sif
+drwxr-xr-x 2 atorresp tug2106 185 Feb 26 13:56 /nfs/home/atorresp/DSE512/DSEintro/DSE512/data
+Selected input file: /nfs/home/atorresp/DSE512/DSEintro/DSE512/data/Data_Feb.csv
