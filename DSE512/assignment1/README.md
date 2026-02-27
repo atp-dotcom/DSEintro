@@ -38,6 +38,7 @@ This is a DAG because there are no closed loop cycles instead each stage depends
 **Failure**
 
 - To demonstrate failure, one infiltration value was deliberately set to a negative number. Since infiltration coefficients must lie in the range [0,1], the simulation stage includes a validation flag: if infil < 0 or infil > 1: raise ValueError(...). The corresponding SLURM array task fails with an explicit error message, while all other array tasks complete successfully. 
+For this case, the task 8 fails (DSE512/assignment1/logs/runoff_4972098_7.err) and can be tracked to see the error log. 
 
 Introduccing failure means we are preventing wasted cluster time and avoid propagating invalid results into later stages. In large ensembles, some tasks may fail due to corrupted input, parameter violations, or runtime instability. Job arrays isolate failure to individual tasks rather than collapsing the entire workflow.
 
