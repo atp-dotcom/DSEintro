@@ -1,0 +1,7 @@
+Task_ID: 14
+Date: 3/14/19
+Rainfall(mm): 0.11
+Infiltration: 0.25
+Runoff(mm): 0.0825
+Timestamp: 2026-02-26 22:16:55.810797
+Hostname: il1227

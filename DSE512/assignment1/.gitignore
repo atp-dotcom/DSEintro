@@ -1,15 +1,6 @@
-# SLURM logs
-logs/
 
-# Simulation outputs
-outputs/
 
-# Generated result files
-ensemble_stats.txt
-risk_classification.txt
 
 # Container image
 *.sif
 
-# SLURM auto files
-slurm-*.out

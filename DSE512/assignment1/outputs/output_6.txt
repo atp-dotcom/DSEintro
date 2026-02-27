@@ -1,0 +1,7 @@
+Task_ID: 6
+Date: 3/6/19
+Rainfall(mm): 0.0
+Infiltration: 0.25
+Runoff(mm): 0.0
+Timestamp: 2026-02-26 22:16:43.434625
+Hostname: il1227
