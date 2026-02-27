@@ -11,9 +11,9 @@ import os
 stage = sys.argv[1]
 
 
-# =========================
+
 # VALIDATION
-# =========================
+
 if stage == "validate":
 
     csv_path = sys.argv[2]
@@ -29,9 +29,9 @@ if stage == "validate":
 
     print("Validation passed: structure OK")
 
-# =========================
+
 # SIMULATION (ARRAY)
-# =========================
+
 elif stage == "simulate":
 
     csv_path = sys.argv[2]
@@ -71,9 +71,9 @@ Hostname: {socket.gethostname()}
 
     print(f"Simulation {task_id} complete")
 
-# =========================
+
 # AGGREGATION
-# =========================
+
 elif stage == "aggregate":
 
     runoffs = []
@@ -96,9 +96,9 @@ elif stage == "aggregate":
 
     print("Aggregation complete")
 
-# =========================
+
 # CLASSIFICATION
-# =========================
+
 elif stage == "classify":
 
     with open("ensemble_stats.txt", "r") as f:

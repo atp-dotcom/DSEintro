@@ -1,5 +1,0 @@
-INFO:    /etc/singularity/ exists; cleanup by system administrator is not complete (see https://apptainer.org/docs/admin/latest/singularity_migration.html)
-Traceback (most recent call last):
-  File "/nfs/home/atorresp/DSE512/DSEintro/DSE512/01_explore_dataset.py", line 127, in <module>
-    raise ValueError("Unknown stage argument")
-ValueError: Unknown stage argument

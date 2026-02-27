@@ -1,6 +1,5 @@
-
-
-
 # Container image
 *.sif
 
+# log files
+logs/*

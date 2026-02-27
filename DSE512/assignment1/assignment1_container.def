@@ -8,7 +8,7 @@ From: ubuntu:22.04
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
-    cat > /usr/local/bin/runoff_container.sh << 'SCRIPT'
+    cat > /usr/local/bin/assignment1_container.sh << 'SCRIPT'
     #!/usr/bin/env bash
 
 set -euo pipefail
@@ -22,10 +22,10 @@ echo "pandas_version=$(python3 -c 'import pandas as p; print(p.__version__)')"
 
 SCRIPT
 
-    chmod +x /usr/local/bin/runoff_container.sh
+    chmod +x /usr/local/bin/assignment1_container.sh
 
 %environment
     export course_container_tag="assignment1"
 
 %runscript
-    exec /usr/local/bin/runoff_container.sh "$@"
+    exec /usr/local/bin/assignment1_container.sh "$@"
